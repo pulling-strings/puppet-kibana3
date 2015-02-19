@@ -1,0 +1,2 @@
+#!/bin/sh
+/opt/logstash/bin/logstash agent -f /etc/logstash/conf.d/logstash.conf --log /var/log/logstash.log -vvv

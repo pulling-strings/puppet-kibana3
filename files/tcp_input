@@ -1,0 +1,6 @@
+input {
+ tcp {
+  port => 22001
+  codec => json_lines
+ }
+}

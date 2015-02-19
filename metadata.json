@@ -1,0 +1,41 @@
+{
+  "name": "strings-kibana3",
+  "version": "0.1.0",
+  "author": "narkisr.com",
+  "summary": "narkisr.com kibana3 module",
+  "license": "Apache-2.0",
+  "source": "https://github.com/pulling-strings/puppet-kibana3",
+  "project_page": "https://github.com/pulling-strings/puppet-kibana3",
+  "issues_url": "https://github.com/pulling-strings/puppet-kibana3/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "14.04",
+        "14.10"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": ">= 3.2.0 < 3.4.0"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 2.2.1"
+    }, {
+      "name": "elasticsearch/logstash",
+      "version_requirement": ">= 0.5.1"
+    }, {
+      "name": "jfryman/nginx",
+      "version_requirement": ">= 0.0.10"
+    }
+  ]
+}
