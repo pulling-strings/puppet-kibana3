@@ -1,18 +1,11 @@
 # Setting up logstash for streaming data into Kibana
 class kibana3::logstash {
-  include elasticsearch::repo
-
-  Apt::Key['elasticsearch-key'] ->
-
-  apt::source { 'elasticsearch-logstash':
-    location    => 'http://packages.elasticsearch.org/logstash/1.4/debian',
-    release     => 'stable',
-    repos       => 'main',
-    include_src => false,
-  } ->
 
   class { '::logstash':
-    init_defaults_file => 'puppet:///modules/kibana3/logstash'
+    init_defaults_file => 'puppet:///modules/kibana3/logstash',
+    manage_repo        => true,
+    repo_version       => '1.4'
+
   }
 
   logstash::configfile { 'elastic_output':

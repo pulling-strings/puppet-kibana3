@@ -5,7 +5,7 @@ class kibana3::nginx {
 
   nginx::resource::vhost { $::hostname:
     ensure   => present,
-    www_root => '/usr/src/kibana-3.1.0',
-    require  => Archive['kibana-3.1.0']
+    www_root => "/usr/src/${::kibana3::archive}",
+    require  => Archive[$::kibana3::archive]
   }
 }

@@ -1,5 +1,9 @@
 # Sets up a kibana3 instance
-class kibana3 {
+class kibana3(
+  $version = '3.1.2'
+){
+
+  $archive = "kibana-${version}"
 
   include kibana3::nginx
   include kibana3::logstash
@@ -8,17 +12,15 @@ class kibana3 {
     include kibana3::runit
   }
 
-  $url = 'https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.zip'
+  $url = "https://download.elasticsearch.org/kibana/kibana/${archive}.zip"
 
-  package{['curl','unzip']:
-    ensure  => present
-  }
+  ensure_resource('package',['curl','unzip'],{ensure => present})
 
   Exec {
     path => ['/usr/bin/', '/bin']
   }
 
-  archive { 'kibana-3.1.0':
+  archive { $archive:
     ensure         => present,
     checksum       => false,
     url            => $url,
