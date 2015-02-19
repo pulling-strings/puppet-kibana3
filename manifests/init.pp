@@ -1,12 +1,19 @@
 # Sets up a kibana3 instance
 class kibana3(
-  $version = '3.1.2'
+  $version = '3.1.2',
+  $manage_logstash = true,
+  $manage_nginx = true
 ){
 
   $archive = "kibana-${version}"
 
-  include kibana3::nginx
-  include kibana3::logstash
+  if($manage_nginx == true){
+    include kibana3::nginx
+  }
+
+  if($manage_logstash== true){
+    include kibana3::logstash
+  }
 
   if($::virtual == 'docker') {
     include kibana3::runit
