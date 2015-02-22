@@ -36,6 +36,10 @@
     }, {
       "name": "jfryman/nginx",
       "version_requirement": ">= 0.0.10"
+    }, {
+      "name": "camptocamp/archive",
+      "version_requirement": ">= 0.3.6"
     }
+
   ]
 }
