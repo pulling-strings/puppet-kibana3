@@ -1,0 +1,5 @@
+input {
+ log4j {
+   port => 7777
+ }
+}
