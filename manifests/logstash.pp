@@ -32,4 +32,5 @@ class kibana3::logstash {
     path => '/etc/default/logstash',
     line => 'LS_USER=root'
   } ~> Service['logstash']
+
 }
