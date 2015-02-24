@@ -4,8 +4,7 @@ class kibana3::logstash {
   class { '::logstash':
     init_defaults_file => 'puppet:///modules/kibana3/logstash',
     manage_repo        => true,
-    repo_version       => '1.4'
-
+    repo_version       => '1.5'
   }
 
   logstash::configfile { 'elastic_output':
