@@ -1,6 +1,5 @@
 output {
-  elasticsearch_http {
-    manage_template => false
+  elasticsearch {
     host            => "localhost"
   }
 }
