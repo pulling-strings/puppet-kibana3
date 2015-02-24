@@ -1,6 +1,6 @@
 input {
   log4j2 {
-    port => 7000
+    port => 7777
     mode => "server"
   }
 }
