@@ -1,0 +1,8 @@
+output {
+  elasticsearch {
+    host    => "localhost"
+<% if(@cluster) -%>
+    cluster =>  "<%=@cluster%>"
+<% end -%>
+  }
+}

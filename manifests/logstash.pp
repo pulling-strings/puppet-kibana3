@@ -1,5 +1,6 @@
 # Setting up logstash for streaming data into Kibana
-class kibana3::logstash {
+# Cluster is the internal elasticsearch output cluster name
+class kibana3::logstash($cluster = false) {
 
   class { '::logstash':
     init_defaults_file => 'puppet:///modules/kibana3/logstash',
@@ -8,8 +9,8 @@ class kibana3::logstash {
   }
 
   logstash::configfile { 'elastic_output':
-    source => 'puppet:///modules/kibana3/elastic_output',
-    order  => 10
+    content => template('kibana3/elastic_output.erb'),
+    order   => 10
   }
 
   logstash::configfile { 'gelf_input':
