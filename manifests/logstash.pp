@@ -22,12 +22,6 @@ class kibana3::logstash {
     order  => 10
   }
 
-  logstash::configfile { 'log4j2_input':
-    source => 'puppet:///modules/kibana3/log4j2_input',
-    order  => 10
-  }
-
-
   file_line { 'logstash LS_USER':
     ensure => absent,
     path   => '/etc/default/logstash',
