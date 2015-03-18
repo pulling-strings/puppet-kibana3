@@ -1,7 +1,7 @@
 # Kibana3 nginx setup
 class kibana3::nginx {
 
-  class {'::nginx': }
+  include ::nginx
 
   nginx::resource::vhost { $::hostname:
     ensure   => present,
