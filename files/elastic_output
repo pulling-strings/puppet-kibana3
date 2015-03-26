@@ -1,5 +1,0 @@
-output {
-  elasticsearch {
-    host            => "localhost"
-  }
-}
