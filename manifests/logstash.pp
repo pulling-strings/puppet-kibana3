@@ -1,11 +1,14 @@
 # Setting up logstash for streaming data into Kibana
 # Cluster is the internal elasticsearch output cluster name
-class kibana3::logstash($cluster = false) {
+class kibana3::logstash(
+  $cluster = false,
+  $version = '1.4'
+) {
 
   class { '::logstash':
     init_defaults_file => 'puppet:///modules/kibana3/logstash',
     manage_repo        => true,
-    repo_version       => '1.5'
+    repo_version       => $version 
   }
 
   logstash::configfile { 'elastic_output':
