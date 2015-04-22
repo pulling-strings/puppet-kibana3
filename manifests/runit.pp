@@ -29,4 +29,17 @@ class kibana3::runit {
     group => root,
   }
 
+  file{'/etc/service/elasticsearch':
+    ensure => directory,
+  } ->
+
+  file { '/etc/service/elasticsearch/run':
+    ensure=> file,
+    mode  => 'u+x',
+    source=> 'puppet:///modules/kibana3/elasticsearch_run',
+    owner => root,
+    group => root,
+  }
+
+
 }
